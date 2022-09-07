@@ -6,7 +6,10 @@
    c. link CSS file in the head & test: (ex: add something like <h1>Hello World</h1> to the html, then add h1 to the CSS file and give it a random color to test if its working)
    d. link JS file at end of body and test: (ex: add something like alert("Hello World"); to the JS file, and test it on the webpage)
    e. add link to bootstrap in the head & test: (ex: add <div></div> around everything in the body & add something like <a href="" class="btn btn-primary">Click Me</a> and test on webpage to see if a button has appeared)
+   f. create repository on github desktop, commit changes, and publish
+   g. push online using netlify.com (log in to netlify, add new site from github, and deploy - deploying might take a few seconds/minutes - then check deploy to make sure it worked)
 2. HTML
+   a. set up basic structure for weather app in HTML (worry about styling later)
 3. CSS
 4. search engine
 5. API integration
