@@ -1,4 +1,17 @@
-h1 {
-  color: red;
-  font-size: small;
+container {
+}
+card {
+}
+card-body {
+}
+#app-name {
+  color: black;
+}
+#search-bar {
+}
+#search-button {
+}
+#city-name {
+}
+#time-and-weather-details {
 }
