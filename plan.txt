@@ -19,8 +19,12 @@
    b. add bootstrap styling for cards, containers, grids...
    c. add classes & IDs
 3. CSS
+      a. add the styling for each part of the application
 4. search engine
+      a. add in the function for the search engine
 5. API integration
+      a. add in the open weather API
 6. unit conversion
+      a. add in the function for the Celcius and Fahrenheit conversions
 7. forecast
 8. summary

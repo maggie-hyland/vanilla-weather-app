@@ -1,17 +1,63 @@
-container {
+#weather-app-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 15px;
+  color: rgb(107, 107, 107);
 }
-card {
+.card {
 }
-card-body {
+.card-body {
+  font-family: "Poppins", sans-serif;
 }
 #app-name {
-  color: black;
+  font-size: 22px;
+  padding-bottom: 10px;
+  text-align: left;
 }
 #search-bar {
 }
 #search-button {
 }
+#bottom-container {
+  padding: 10px 0px;
+  margin: 10px;
+  text-align: left;
+}
 #city-name {
+  font-size: 28px;
 }
 #time-and-weather-details {
+}
+#icon-current-temp-c-f {
+  padding: 10px;
+  font-size: 24px;
+  text-align: right;
+}
+#temp-icon {
+  font-size: 36px;
+}
+#current-temp {
+  font-size: 36px;
+  font-weight: 300;
+}
+#five-day-forecast {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+h5.card-header {
+  font-size: 20px;
+  padding: 4px 12px;
+}
+h5.card-title {
+  font-size: 26px;
+}
+p.card-text {
+  color: rgba(114, 114, 114, 0.666);
+  font-size: 14px;
+}
+#open-source {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 10px;
 }
