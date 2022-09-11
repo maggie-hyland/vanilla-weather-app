@@ -20,6 +20,7 @@
       src="https://kit.fontawesome.com/594f17bd07.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Cosmic Weather App</title>
   </head>
   <body>
@@ -56,18 +57,18 @@
             <!--#bottom-container-->
             <div id="bottom-container">
               <div class="row">
-                <!--#city-name-->
+                <!--#city-->
                 <div class="col-6">
-                  <div id="city-name">city-name</div>
+                  <div id="city"></div>
                   <!--#time-and-weather-details-->
                   <div id="time-and-weather-details">
                     <div>
                       <span>day-time,</span>
-                      <span>weather-description</span>
+                      <span id="description">weather-description</span>
                     </div>
                     <div>
-                      <span>humidity: 20%,</span>
-                      <span>wind: 5km/h</span>
+                      <span>humidity: <span id="humidity"></span>%,</span>
+                      <span>wind: <span id="wind"></span> km/h</span>
                     </div>
                   </div>
                 </div>
@@ -77,8 +78,8 @@
                   <span id="temp-icon">
                     <i class="fa-solid fa-cloud-sun-rain"></i>
                   </span>
-                  <!--#current-temp-->
-                  <span id="current-temp">20</span>
+                  <!--#temperature-->
+                  <span id="temperature"></span>
                   <span>C° | F°</span>
                 </div>
               </div>

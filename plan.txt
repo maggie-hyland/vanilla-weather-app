@@ -23,7 +23,8 @@
 4. search engine
       a. add in the function for the search engine
 5. API integration
-      a. add in the open weather API
+      a. add the openweather API URL in the javascript file
+      b. add the openweather API key in the javascript file
 6. unit conversion
       a. add in the function for the Celcius and Fahrenheit conversions
 7. forecast
