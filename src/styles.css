@@ -26,8 +26,12 @@
 #city {
   font-size: 28px;
 }
-#time-and-weather-details {
-  text-transform: capitalize;
+#date-style {
+  color: rgba(107, 107, 107, 0.65);
+}
+#description-humidity-wind {
+  padding-top: 10px;
+  color: rgba(107, 107, 107, 0.85);
 }
 #icon-current-temp-c-f {
   padding: 10px;
