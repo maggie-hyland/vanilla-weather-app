@@ -21,7 +21,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Cosmic Weather App</title>
+    <title>Get Ready Forecast</title>
   </head>
   <body>
     <!---->
@@ -38,14 +38,16 @@
                 <i class="fa-regular fa-hand-peace"></i> Get Ready Forecast
               </div>
             </div>
-            <form>
+            <!--#search-form-->
+            <form id="search-form">
               <div class="row">
-                <!--#search-bar-->
-                <div class="col-9" id="search-bar">
+                <div class="col-9">
                   <input
                     class="form-control"
                     type="search"
                     placeholder="Search for city..."
+                    id="city-input"
+                    autocomplete="off"
                   />
                 </div>
                 <!--#search-button-->
@@ -75,7 +77,7 @@
                 <div class="col-6" id="icon-current-temp-c-f">
                   <!--#temp-icon-->
                   <span id="temp-icon">
-                    <i class="fa-solid fa-cloud-sun-rain"></i>
+                    <img src="" alt="" id="icon" />
                   </span>
                   <!--#temperature-->
                   <span id="temperature"></span>

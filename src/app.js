@@ -1,8 +1,3 @@
-let apiKey = "f43e87505c78f4b7859080149fe4a760";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(displayTemperature);
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -54,4 +49,30 @@ function displayTemperature(response) {
   //this will take the data from the formatDate function (which is milliseconds from 1970 *thats just how its calculated in JS*) and integrate it into the app
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  //this will find the icon description listed within the data from the weather API and match it with its image that can be found at the listed URL
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  //this will set the alt for the icon to the description given (ie. cloudy, light rain, sunny...)
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
+function search(city) {
+  let apiKey = "f43e87505c78f4b7859080149fe4a760";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Tokyo");
