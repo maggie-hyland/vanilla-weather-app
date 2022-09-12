@@ -1,10 +1,19 @@
 #weather-app-container {
   max-width: 800px;
-  margin: 40px auto;
+  margin: auto;
+  margin-top: 40px;
   padding: 15px;
-  color: rgb(107, 107, 107);
+  color: rgb(133, 88, 255, 0.85);
+  background: linear-gradient(
+    180deg,
+    rgb(161, 243, 255) 18%,
+    rgb(221, 209, 253) 100%
+  );
+  border: 0.5mm solid rgb(221, 209, 253 0.8);
+  border-radius: 8px;
 }
-.card {
+div.card {
+  border-color: rgb(133, 88, 255, 0.2);
 }
 .card-body {
   font-family: "Poppins", sans-serif;
@@ -13,10 +22,15 @@
   font-size: 22px;
   padding-bottom: 10px;
   text-align: left;
+  color: rgb(133, 88, 255);
 }
-#search-bar {
+#search-btn-style {
+  color: white;
+  border: 0.5mm solid rgb(133, 88, 255, 0.9);
+  background-color: rgb(133, 88, 255, 0.85);
 }
-#search-button {
+#search-btn-style:hover {
+  background-color: rgb(133, 88, 255, 0.7);
 }
 #bottom-container {
   padding: 10px 0px;
@@ -24,14 +38,16 @@
   text-align: left;
 }
 #city {
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: 600;
+  color: rgb(133, 88, 255);
 }
 #date-style {
-  color: rgba(107, 107, 107, 0.65);
+  color: rgb(133, 88, 255, 0.65);
 }
 #description-humidity-wind {
   padding-top: 10px;
-  color: rgba(107, 107, 107, 0.85);
+  color: rgb(133, 88, 255, 0.85);
 }
 #icon-current-temp-c-f {
   padding: 10px;
@@ -42,14 +58,14 @@
   font-size: 36px;
 }
 #temperature {
-  font-size: 36px;
-  font-weight: 300;
+  font-size: 40px;
+  font-weight: 500;
 }
 #celsius-link {
   text-decoration: none;
 }
 .units .active {
-  color: rgb(107, 107, 107);
+  color: rgb(133, 88, 255, 0.85);
   cursor: default;
 }
 #fahrenheit-link {
@@ -57,22 +73,27 @@
 }
 #five-day-forecast {
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   text-align: center;
 }
 h5.card-header {
   font-size: 20px;
   padding: 4px 12px;
+  background: rgba(133, 88, 255, 0.08);
 }
 h5.card-title {
   font-size: 26px;
 }
 p.card-text {
-  color: rgba(114, 114, 114, 0.666);
+  color: rgb(133, 88, 255, 0.65);
   font-size: 14px;
 }
 #open-source {
-  text-align: center;
-  font-size: 12px;
   padding-top: 10px;
+  color: rgb(133, 88, 255);
+  text-align: center;
+  font-size: 13px;
+}
+#github-link {
+  text-decoration: none;
 }
