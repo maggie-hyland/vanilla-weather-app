@@ -28,4 +28,7 @@
 6. unit conversion
       a. add in the function for the Celcius and Fahrenheit conversions
 7. forecast
+      a. add the HTML & CSS for forecast
+      b. add the API call to get the forecast
+      c. replace the dummy content with the real data
 8. summary
