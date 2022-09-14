@@ -21,7 +21,6 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-//the following function displays the temperature, city, weather description, humidity, and wind speed
 function displayTemperature(response) {
   //the following console.log helps for obtaining the source for the info from the weather API
   console.log(response.data);
@@ -105,3 +104,41 @@ function convertToCelsius(event) {
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  //first, open the row
+  let forecastHTML = `<div class="row">`;
+  //then define the days
+  let days = ["Thu", "Fri", "Sat"];
+  //then create a function to inject the days into the code below
+  days.forEach(function (day) {
+    //then let forecastHTML equal itself (the div row from above), AND all the code written below
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+        <div class="card">
+            <h5 class="card-header weather-forecast-date">${day}</h5>
+            <div class="card-body">
+              <img
+                src="http://openweathermap.org/img/wn/03n@2x.png"
+                alt=""
+              />
+              <p class="card-text weather-forecast-temperatures">
+                <span class="weather-forecast-temperatures-max"
+                  >22°
+                </span>
+                <span class="weather-forecast-temperatures-min"
+                  >18°</span
+                 >
+              </p>
+            </div>
+          </div>
+        </div>`;
+  });
+  //then close the row
+  forecastHTML = forecastHTML + `</div>`;
+  //then inject it into the HTML
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
