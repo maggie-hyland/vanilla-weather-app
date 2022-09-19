@@ -3,17 +3,26 @@
   margin: auto;
   margin-top: 40px;
   padding: 15px;
-  color: rgb(133, 88, 255, 0.85);
+  color: rgb(72, 72, 74, 0.85);
   background: linear-gradient(
     180deg,
-    rgb(161, 243, 255) 18%,
-    rgb(221, 209, 253) 100%
+    rgb(133, 88, 255, 0.6) 6%,
+    rgb(236, 110, 76, 0.8) 100%
   );
   border: 0.5mm solid rgb(221, 209, 253 0.8);
   border-radius: 8px;
 }
 div.card {
-  border-color: rgb(133, 88, 255, 0.2);
+  border-color: rgba(46, 130, 153, 0.2);
+}
+div.card-body {
+  padding: 16px 8px;
+}
+div.container.text-center {
+  padding: 0;
+}
+div#icon-current-temp-c-f {
+  text-align: left;
 }
 .card-body {
   font-family: "Poppins", sans-serif;
@@ -22,15 +31,15 @@ div.card {
   font-size: 22px;
   padding-bottom: 10px;
   text-align: left;
-  color: rgb(133, 88, 255);
+  color: #48484a;
 }
 #search-btn-style {
   color: white;
-  border: 0.5mm solid rgb(133, 88, 255, 0.9);
-  background-color: rgb(133, 88, 255, 0.85);
+  border: 0.5mm solid rgb(72, 72, 74, 0.9);
+  background-color: rgb(72, 72, 74, 0.85);
 }
 #search-btn-style:hover {
-  background-color: rgb(133, 88, 255, 0.7);
+  background-color: rgb(72, 72, 74, 0.7);
 }
 #bottom-container {
   padding: 10px 0px;
@@ -40,22 +49,21 @@ div.card {
 #city {
   font-size: 32px;
   font-weight: 600;
-  color: rgb(133, 88, 255);
+  color: rgb(72, 72, 74);
 }
 #date-style {
-  color: rgb(133, 88, 255, 0.65);
+  color: rgb(72, 72, 74, 0.65);
 }
 #description-humidity-wind {
   padding-top: 10px;
-  color: rgb(133, 88, 255, 0.85);
+  color: rgb(72, 72, 74, 0.85);
 }
 #icon-current-temp-c-f {
   padding: 10px;
   font-size: 24px;
-  text-align: right;
 }
 #temp-icon {
-  font-size: 36px;
+  font-size: 50px;
 }
 #temperature {
   font-size: 40px;
@@ -65,7 +73,7 @@ div.card {
   text-decoration: none;
 }
 .units .active {
-  color: rgb(133, 88, 255, 0.85);
+  color: rgb(105, 105, 105);
   cursor: default;
 }
 #fahrenheit-link {
@@ -73,6 +81,12 @@ div.card {
 }
 
 /* FIVE DAY FORECAST */
+#forecast-card {
+}
+#forecast-card-body {
+  padding: 6px;
+  margin: 0;
+}
 #weather-forecast {
   margin-top: 25px;
   margin-bottom: 5px;
@@ -85,12 +99,12 @@ h5.weather-forecast-date {
 }
 .weather-forecast-temperatures-max {
   font-size: 16px;
-  color: rgb(133, 88, 255, 0.95);
+  color: rgb(72, 72, 74, 0.95);
   font-weight: 500;
 }
 .weather-forecast-temperatures-min {
   font-size: 16px;
-  color: rgb(133, 88, 255, 0.5);
+  color: rgb(72, 72, 74, 0.6);
 }
 h5.card-title {
   font-size: 26px;
