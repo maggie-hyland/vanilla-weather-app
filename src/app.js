@@ -12,13 +12,13 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `0${hours}`;
+    hours = `${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${day}, ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -106,11 +106,6 @@ function convertToFahrenheit(event) {
   fahrenheitLink.classList.add("active");
 }
 
-let celsiusTemperature = null;
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
-
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -120,6 +115,7 @@ function convertToCelsius(event) {
 }
 
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
@@ -129,7 +125,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
-        <div class="card mt-1" id"forecast-card">
+        <div class="card mt-1" id="forecast-card">
             <h5 class="card-header weather-forecast-date">${formatDay(
               forecastDay.dt
             )}</h5>
@@ -138,7 +134,7 @@ function displayForecast(response) {
                 src="http://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
                 }@2x.png"
-                alt=""
+                alt="" width="80px"
               />
               <p class="card-text weather-forecast-temperatures">
                 <span class="weather-forecast-temperatures-max"
@@ -159,3 +155,8 @@ function displayForecast(response) {
   //then inject it into the HTML
   forecastElement.innerHTML = forecastHTML;
 }
+
+let celsiusTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);

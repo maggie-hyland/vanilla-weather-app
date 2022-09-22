@@ -27,7 +27,7 @@
     <!---->
     <div class="container" id="weather-app-container">
       <!---->
-      <div class="card">
+      <div class="card" id="container-card">
         <!---->
         <div class="card-body">
           <!---->
@@ -41,7 +41,7 @@
             <!--#search-form-->
             <form id="search-form">
               <div class="row">
-                <div class="col-9">
+                <div class="col-9" id="search-bar-details">
                   <input
                     class="form-control"
                     type="search"
@@ -57,6 +57,7 @@
                     type="submit"
                     value="Search"
                     id="search-btn-style"
+                    style="height: 38px; width: 140px"
                   />
                 </div>
               </div>
@@ -67,22 +68,24 @@
                 <!--#city-->
                 <div class="col-6">
                   <div id="city"></div>
-                  <div>
-                    <div id="date-style">
-                      <span>last updated: <span id="date"></span></span>
-                    </div>
-                    <div id="description-humidity-wind">
-                      <div id="description">weather-description</div>
-                      <div>humidity: <span id="humidity"></span>%</div>
-                      <div>wind: <span id="wind"></span> km/h</div>
-                    </div>
+                  <div id="date-style" class="weather-details">
+                    <span>last updated: <span id="date"></span></span>
+                  </div>
+                  <div id="description" class="weather-details">
+                    weather-description
+                  </div>
+                  <div class="weather-details">
+                    humidity: <span id="humidity"></span>%
+                  </div>
+                  <div class="weather-details">
+                    wind: <span id="wind"></span> km/h
                   </div>
                 </div>
                 <!--#icon-current-temp-c-f-->
                 <div class="col-6" id="icon-current-temp-c-f">
                   <!--#temp-icon-->
                   <span id="temp-icon">
-                    <img src="" alt="" id="icon" />
+                    <img src="" alt="" id="icon" class="temp-icon" />
                   </span>
                   <!--#temperature-->
                   <span id="temperature"></span>
@@ -102,7 +105,7 @@
     </div>
     <div class="row">
       <div class="col" id="open-source">
-        This project was developed by Maggie Hyland. Open-sourced on
+        Developed by Maggie Hyland. Open-sourced on
         <a
           href="https://github.com/maggie-hyland/vanilla-weather-app"
           id="github-link"
