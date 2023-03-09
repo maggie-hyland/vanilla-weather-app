@@ -94,32 +94,53 @@ form.addEventListener("submit", handleSubmit);
 search("Tokyo");
 
 //fahrenheit
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
+let fahrenheitLink = document.querySelector('#fahrenheit-link');
+fahrenheitLink.addEventListener('click', convertToFahrenheit);
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector('#temperature');
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+
+  for (let index = 0; index < 5; index++) {
+    let forecastElementMax = document.querySelector(`#temperatureMax${index}`);
+    forecastElementMax.innerHTML =
+      Math.round((celsiusForecastMax[index] * 9) / 5 + 32) + '°';
+
+    let forecastElementMin = document.querySelector(`#temperatureMin${index}`);
+    forecastElementMin.innerHTML =
+      Math.round((celsiusForecastMin[index] * 9) / 5 + 32) + '°';
+  }
+
+  celsiusLink.classList.remove('active');
+  fahrenheitLink.classList.add('active');
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector('#temperature');
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
+
+  for (let index = 0; index < 5; index++) {
+    let forecastElementMax = document.querySelector(`#temperatureMax${index}`);
+    forecastElementMax.innerHTML = Math.round(celsiusForecastMax[index]) + '°';
+
+    let forecastElementMin = document.querySelector(`#temperatureMin${index}`);
+    forecastElementMin.innerHTML = Math.round(celsiusForecastMin[index]) + '°';
+  }
+
+  fahrenheitLink.classList.remove('active');
+  celsiusLink.classList.add('active');
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastElement = document.querySelector('#weather-forecast');
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
+    celsiusForecastMax[index] = Math.round(forecastDay.temp.max);
+    celsiusForecastMin[index] = Math.round(forecastDay.temp.min);
     //then let forecastHTML equal itself (the div row from above), AND all the code written below
     if (index < 5) {
       forecastHTML =
@@ -137,10 +158,10 @@ function displayForecast(response) {
                 alt="" width="80px"
               />
               <p class="card-text weather-forecast-temperatures">
-                <span class="weather-forecast-temperatures-max"
+                <span id="temperatureMax${index}" class="weather-forecast-temperatures-max"
                   >${Math.round(forecastDay.temp.max)}°
                 </span>
-                <span class="weather-forecast-temperatures-min"
+                <span id="temperatureMin${index}" class="weather-forecast-temperatures-min"
                   >${Math.round(forecastDay.temp.min)}°</span
                  >
               </p>
@@ -157,6 +178,8 @@ function displayForecast(response) {
 }
 
 let celsiusTemperature = null;
+let celsiusForecastMax = new Array(5);
+let celsiusForecastMin = new Array(5);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
+let celsiusLink = document.querySelector('#celsius-link');
+celsiusLink.addEventListener('click', convertToCelsius);
